@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main() {
+    int tabuleiro[5][5] = {0};
+    int linha, coluna;
+    int navio_linha = 2;
+    int navio_coluna = 3;
+
+    printf("=== Jogo de Batalha Naval ===\n");
+    printf("Tabuleiro 5x5 (linhas e colunas de 0 a 4)\n");
+
+    while (1) {
+        printf("\nDigite a linha: ");
+        scanf("%d", &linha);
+
+        printf("Digite a coluna: ");
+        scanf("%d", &coluna);
+
+        if (linha < 0 || linha > 4 || coluna < 0 || coluna > 4) {
+            printf("Posicao invalida. Tente novamente.\n");
+            continue;
+        }
+
+        if (linha == navio_linha && coluna == navio_coluna) {
+            printf("💥 Acertou o navio! Fim de jogo.\n");
+            break;
+        } else {
+            printf("🌊 Agua! Tente novamente.\n");
+        }
+    }
+
+    return 0;
+}
